@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/avetisk/defaults.png?branch=master)](http://travis-ci.org/avetisk/defaults)
 
 # defaults
 
