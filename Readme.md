@@ -5,7 +5,7 @@
 
 ## Installation
 
-  $ component install avetisk/defaults
+`$ component install avetisk/defaults`
 
 ## API
 
