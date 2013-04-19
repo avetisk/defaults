@@ -1,6 +1,13 @@
 {
   "name": "defaults",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "merge two objects keys if absents from source object",
+  "keywords": [
+    "config",
+    "defaults"
+  ],
+  "homepage": "https://github.com/avetisk/defaults",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "*"
   },
