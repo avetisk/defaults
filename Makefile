@@ -9,6 +9,7 @@ clean:
 	rm -fr build components template.js
 
 test:
+	@jshint --config .jshintrc index.js test/
 	@./node_modules/mocha/bin/mocha -R spec test
 
 .PHONY: clean test

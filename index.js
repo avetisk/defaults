@@ -1,7 +1,4 @@
-/**
- * Expose `defaults`.
- */
-module.exports = defaults;
+'use strict';
 
 /**
  * Merge default values.
@@ -11,12 +8,19 @@ module.exports = defaults;
  * @return {Object}
  * @api public
  */
-function defaults (dest, defaults) {
-  for (var prop in defaults) {
-    if (! (prop in dest)) {
-      dest[prop] = defaults[prop];
+var defaults = function (dest, src, recursive) {
+  for (var prop in src) {
+    if (recursive && dest[prop] instanceof Object && src[prop] instanceof Object) {
+      dest[prop] = defaults(dest[prop], src[prop], true);
+    } else if (! (prop in dest)) {
+      dest[prop] = src[prop];
     }
   }
 
   return dest;
 };
+
+/**
+ * Expose `defaults`.
+ */
+module.exports = defaults;
