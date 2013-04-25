@@ -1,6 +1,6 @@
 {
   "name": "stluafed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "merge two objects keys if absents from source object",
   "keywords": [
     "config",
