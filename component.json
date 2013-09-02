@@ -3,7 +3,7 @@
   "repo": "avetisk/defaults",
   "twitter": "@avetisk",
   "description": "Assigns enumerable properties of the default object(s) to the destination object for all destination properties that resolve to undefined.",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "keywords": ["extend object", "defaults", "default values"],
   "dependencies": {},
   "development": {},
