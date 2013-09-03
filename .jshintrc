@@ -18,7 +18,6 @@
   "strict": true,
   "trailing": true,
 
-  "es5": true,
   "sub": true,
   "boss": true,
 
