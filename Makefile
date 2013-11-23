@@ -1,3 +1,4 @@
+JS = $$(find index.js test/index.js)
 PATH := $(PATH):./node_modules/.bin
 
 build: components index.js
@@ -9,8 +10,10 @@ components: component.json
 clean:
 	rm -fr build components template.js
 
-test:
-	@jshint --config .jshintrc index.js test/
-	@mocha -R spec test
+test: validate
+	@./node_modules/.bin/mocha -R spec test
+
+validate:
+	@./node_modules/.bin/jshint --config .jshintrc $(JS)
 
 .PHONY: clean test

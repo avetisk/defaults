@@ -6,13 +6,27 @@
     "config",
     "defaults"
   ],
-  "homepage": "https://github.com/avetisk/defaults",
   "license": "MIT",
+  "author": "Avétis KAZARIAN",
+  "contributors": "Avétis KAZARIAN",
+  "homepage": "https://github.com/avetisk/defaults",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avetisk/defaults.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avetisk/defaults.git"
+  },
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": "~0.10.22"
+  },
+  "dependencies": {},
   "devDependencies": {
     "mocha": "*",
     "jshint": "*"
-  },
-  "scripts": {
-    "test": "make test"
   }
 }

@@ -6,16 +6,59 @@
 
 ## Installation
 
+`npm`:
+
+`$ npm install stluafed`
+
+or `component`:
+
 `$ component install avetisk/defaults`
 
 ## API
 
-### defaults(obj1, obj2)
+### simple: defaults(obj1, obj2)
 
 ```javascript
-defaults({'x': 1}, {'x': 2, 'y': 2});
-// > {'x': 1, 'y': 2}
+defaults(
+  {
+    'x': 1,
+    'z': {
+      'a': 11
+    }
+  },
+  {
+    'x': 2,
+    'y': 2,
+    'z': {
+      'b': 22
+    }
+  }
+);
+// > {'x': 1, 'y': 2, 'z': {'a': 11}}
 ```
+
+### recursive: defaults(obj1, obj2, true)
+
+```javascript
+defaults(
+  {
+    'x': 1,
+    'z': {
+      'a': 11
+    }
+  },
+  {
+    'x': 2,
+    'y': 2,
+    'z': {
+      'b': 22
+    }
+  },
+  true
+);
+// > {'x': 1, 'y': 2, 'z': {'a': 11, 'b': 22}}
+```
+
 
 ## License
 

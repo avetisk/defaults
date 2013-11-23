@@ -17,6 +17,8 @@
   "unused": true,
   "strict": true,
   "trailing": true,
+  "gcl": true,
+  "maxcomplexity": 10,
 
   "sub": true,
   "boss": true,
