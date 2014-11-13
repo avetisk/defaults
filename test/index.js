@@ -28,7 +28,7 @@ describe('defaults(dest, src)', function () {
   });
 
   it('should not assign recursively when property is undefined', function (done) {
-    assert(result.z.b === undefined);
+    assert(typeof result.z.b === 'undefined');
 
     done();
   });
@@ -52,6 +52,9 @@ describe('defaults(dest, src, true)', function () {
       'xx': 1,
       'xz': 3
     },
+    'func': function () {
+      return 'Func your life!';
+    },
     'z': 3,
     '_': {
       '_x': 1,
@@ -64,6 +67,9 @@ describe('defaults(dest, src, true)', function () {
     'x': {
       'xx': 3,
       'xy': 2
+    },
+    'fn': function () {
+      return 'Hell, I am a Function!';
     },
     'y': 2,
     'z': {},
@@ -85,6 +91,7 @@ describe('defaults(dest, src, true)', function () {
   });
 
   it('should assign when property is undefined', function (done) {
+    assert(typeof result.fn === 'function');
     assert(result.x.xy === 2);
     assert(result.y === 2);
     assert(result._._y._yy === 'Jay Sri Radhe !');
