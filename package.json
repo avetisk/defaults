@@ -21,9 +21,6 @@
   "scripts": {
     "test": "make test"
   },
-  "engines": {
-    "node": "~0.10.22"
-  },
   "dependencies": {},
   "devDependencies": {
     "mocha": "*",
