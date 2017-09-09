@@ -1,30 +1,20 @@
-'use strict';
-
 /**
  * Merge default values.
  *
- * @param {Object} dest destination object
- * @param {Object} src source object
- * @param {Boolean} recursive merge into destination recursively (default: false)
- * @return {Object} dest object
+ * @param {Array<Object>} src source object(s)
+ * @return {Object}
  */
-var defaults = function (dest, src, recursive) {
-  for (var prop in src) {
-    if (! src.hasOwnProperty(prop)) {
-      continue;
-    }
+const defaults = (...objects) =>
+  objects.reduce(
+    (result, object) =>
+      Object.entries(object).reduce(
+        (entry, [key, value]) =>
+          entry[key] instanceof Object && value instanceof Object
+            ? { ...entry, [key]: defaults(entry[key], value) }
+            : { [key]: value, ...entry },
+        result
+      ),
+    {}
+  )
 
-    if (recursive && dest[prop] instanceof Object && src[prop] instanceof Object) {
-      dest[prop] = defaults(dest[prop], src[prop], true);
-    } else if (! (prop in dest)) {
-      dest[prop] = src[prop];
-    }
-  }
-
-  return dest;
-};
-
-/**
- * Expose `defaults`.
- */
-module.exports = defaults;
+module.exports = defaults
